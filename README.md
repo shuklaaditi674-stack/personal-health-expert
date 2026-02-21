@@ -1,104 +1,82 @@
 # 💚 MedAgent AI - Preventive Healthcare Assistant
 
-MedAgent AI is a **preventive healthcare monitoring system**.  
-It allows users to input lifestyle and medical information, **compresses it using ScaleDown API** to optimize AI token usage, calculates a basic **risk score**, and provides simple **preventive recommendations**.
+**MedAgent AI** is a preventive healthcare monitoring system that allows users to input lifestyle and medical information, compresses it using the **ScaleDown API** to optimize AI processing costs, calculates a basic **risk score**, and provides simple **preventive recommendations**.
 
 ---
 
 ## Features
 
 - User-friendly **Streamlit frontend** for entering health data.
-- **Health information compression** using [ScaleDown API](https://scaledown.ai/).
-- Calculates a **basic risk score** based on user input.
-- Displays **preventive recommendations** based on lifestyle symptoms.
-- Shows **compression statistics**: tokens saved, API latency, compression ratio.
-
----
-
-## Folder Structure
-
-
-MedAi/
-│
-├── frontend/
-│ └── app.py # Streamlit frontend application
-│
-├── backend/
-│ └── rag_backend.py # Health data compression backend
-│
-├── docs/
-│ ├── frontend_app.md # Documentation for frontend app
-│ └── backend_rag_backend.md # Documentation for backend
-│
-├── .env # Environment variables (API key)
-├── requirements.txt # Python dependencies
-└── README.md # This file
-
+- **Health information compression** via [ScaleDown API](https://scaledown.ai/).
+- Computes a **basic risk score** based on user input.
+- Displays **preventive recommendations** according to lifestyle symptoms.
+- Shows **compression statistics**: tokens saved, API latency, and compression ratio.
 
 ---
 
 ## Setup Instructions
 
 1. **Clone the repository**
-
 git clone <your-repo-url>
 cd MedAi
 
-Create and activate a virtual environment
+2. Create and activate a virtual environment
 
-python -m venv venv
 # Windows
+python -m venv venv
 venv\Scripts\activate
-# Linux / macOS
+
+# Linux/macOS
+python -m venv venv
 source venv/bin/activate
 
-Install dependencies
+3. Install dependencies
 
 pip install -r requirements.txt
 
-Create a .env file in the project root and add your ScaleDown API key:
+4. Create a .env file in the project root with your ScaleDown API key:
 
 SCALEDOWN_API_KEY=your_api_key_here
 
-Run the Streamlit app
+5. Run the Streamlit app
 
 streamlit run frontend/app.py
 
-Open your browser at http://localhost:8501
- to use the app.
+6. Open your browser at http://localhost:8501 to use the app.
 
-How It Works
+-----------------------------------------------------------------------------------------------------------
 
-User enters age, sleep hours, stress, fatigue, and medical history.
+**How It Works**
 
-Backend sends this input to ScaleDown API to compress the text.
+1. Users enter age, sleep hours, stress level, fatigue, and medical history.
 
-Streamlit displays:
+2. Backend sends this input to ScaleDown API to compress the text for AI optimization.
 
-Original input
+3. Streamlit displays:
+      
+      Original input
+      
+      Compressed input
+      
+      Basic risk score
+      
+      Preventive recommendations
+      
+      Compression stats (ratio, latency, tokens used)
 
-Compressed input
-
-Basic risk score
-
-Preventive recommendations
-
-Compression stats (ratio, latency)
-
-Notes
+*Notes*
 
 Current version does not generate AI recommendations dynamically.
 
 Future updates can integrate LLM-based AI suggestions using Hugging Face models.
 
-Dependencies
-
+**Dependencies**
 Python 3.10+
-
 Streamlit
-
 python-dotenv
-
 requests
-
 sentence-transformers
+
+***License***
+
+MIT License © 2026 Aditi Shukla
